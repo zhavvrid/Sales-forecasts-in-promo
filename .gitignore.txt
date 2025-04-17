@@ -1,0 +1,28 @@
+# Node.js (frontend)
+frontend/node_modules/
+frontend/.cache/
+frontend/build/
+frontend/dist/
+
+# Python (ml_service)
+ml_service/__pycache__/
+ml_service/.venv/
+ml_service/env/
+ml_service/venv/
+ml_service/.idea/
+ml_service/.mypy_cache/
+ml_service/.pytest_cache/
+
+# Java (backend)
+backend/target/
+backend/.idea/
+backend/.classpath
+backend/.project
+backend/.settings/
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.log
+.env
+*.iml
