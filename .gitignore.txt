@@ -5,13 +5,13 @@ frontend/build/
 frontend/dist/
 
 # Python (ml_service)
-ml_service/__pycache__/
-ml_service/.venv/
-ml_service/env/
-ml_service/venv/
-ml_service/.idea/
-ml_service/.mypy_cache/
-ml_service/.pytest_cache/
+FlaskProject/__pycache__/
+FlaskProject/.venv/
+FlaskProject/env/
+FlaskProject/venv/
+FlaskProject/.idea/
+FlaskProject/.mypy_cache/
+FlaskProject/.pytest_cache/
 
 # Java (backend)
 backend/target/
