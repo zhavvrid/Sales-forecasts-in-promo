@@ -1,5 +1,7 @@
-# Node.js (frontend)
+node_modules/
 frontend/node_modules/
+.cache/
+*.cache
 frontend/.cache/
 frontend/build/
 frontend/dist/
@@ -20,7 +22,6 @@ backend/.classpath
 backend/.project
 backend/.settings/
 
-# OS / Editor junk
 .DS_Store
 Thumbs.db
 *.log
