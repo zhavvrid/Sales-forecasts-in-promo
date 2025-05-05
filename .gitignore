@@ -27,3 +27,5 @@ Thumbs.db
 *.log
 .env
 *.iml
+"credentials.json" 
+"backend/target/classes/credentials.json" 
