@@ -11,27 +11,27 @@ function AdminSidebar({ onLogout }) {
         <div className="flex flex-col space-y-4 p-4 mt-12 bg-[#1e293b] text-white h-[95vh]">
         <Link to="/">
                 <Button color="secondary" variant="solid" startContent={<Home />} className="w-full">
-                    Home
+                    Главная
                 </Button>
             </Link>
             <Link to="/upload">
                 <Button color="primary" variant="solid" startContent={<Upload />} className="w-full">
-                    Upload Data
+                    Загрузка данных
                 </Button>
             </Link>
             <Link to="/forecast">
                 <Button color="success" variant="solid" startContent={<BarChart3 />} className="w-full">
-                    Forecast
+                    Прогнозирование
                 </Button>
             </Link>
-            <Link to="/predict">
+{/*            <Link to="/predict">
                 <Button color="warning" variant="solid" startContent={<WandSparkles />} className="w-full">
                     Predict
                 </Button>
-            </Link>
+            </Link>*/}
             <Link to="/admin/users">
                 <Button color="danger" variant="solid" startContent={<Users />} className="w-full">
-                    Manage Users
+                    Пользователи
                 </Button>
             </Link>
           {/*  <Link to="/admin/settings">
@@ -41,7 +41,7 @@ function AdminSidebar({ onLogout }) {
             </Link>*/}
             <Link to="/forecast-analysis">
                 <Button color="secondary" variant="solid" startContent={<LineChart />} className="w-full">
-                    Forecast Analysis
+                    Анализ прогнозов
                 </Button>
             </Link>
         </div>

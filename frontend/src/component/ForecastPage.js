@@ -162,7 +162,7 @@ const ForecastPage = () => {
                     <Select
                         placeholder="Select Promotion"
                         options={[
-                            { value: 'none', label: 'No Promotion' },
+                            { value: 'all', label: 'All Promotion' },
                             ...promotions.map(p => ({
                                 value: p.id,
                                 label: p.name,

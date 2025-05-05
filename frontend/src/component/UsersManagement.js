@@ -34,7 +34,7 @@ function UsersManagement() {
             });
             setUsers(response.data);
             setFilteredUsers(response.data);
-            setRoles(['ROLE_ADMIN', 'ROLE_ANALYST', 'ROLE_USER']);
+            setRoles(['ROLE_ADMIN', 'ROLE_ANALYST']);
         } catch (error) {
             console.error('Error fetching users:', error);
         }

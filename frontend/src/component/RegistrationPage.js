@@ -17,10 +17,10 @@ function RegistrationPage() {
       };
 
       const response = await axios.post('http://localhost:8080/register', userData);
-      console.log('User registered:', response.data);
+      console.log('Пользователь зарегистрирован:', response.data);
 
     } catch (error) {
-      console.error('Registration error:', error);
+      console.error('Ошибка регистрации:', error);
     }
     setRegistrationSuccess(true);
   };
@@ -29,9 +29,9 @@ function RegistrationPage() {
     return (
         <div className='centered-container'>
           <div className="login-container">
-            <h1>Registrazione effettuata con successo!</h1>
+            <h1>Регистрация успешно завершена!</h1>
             <div className="registration-link">
-              <p>Per accedere al tuo nuovo account <a href="/">Login here</a></p>
+              <p>Для входа в ваш аккаунт <a href="/">Авторизуйтесь здесь</a></p>
             </div>
           </div>
         </div>
@@ -41,11 +41,11 @@ function RegistrationPage() {
   return (
       <div className="centered-container">
         <div className="login-container">
-          <h2>Registration</h2>
+          <h2>Регистрация</h2>
           <div className="input-container">
             <input
                 type="text"
-                placeholder="Username"
+                placeholder="Имя пользователя"
                 value={username}
                 onChange={(e) => setUserName(e.target.value)}
             />
@@ -53,21 +53,21 @@ function RegistrationPage() {
           <div className="input-container">
             <input
                 type="password"
-                placeholder="Password"
+                placeholder="Пароль"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="input-container">
             <select value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="">Select Role</option>
-              <option value="ROLE_ANALYST">Analyst</option>
-              <option value="ROLE_ADMIN">Administrator</option>
+              <option value="">Выберите роль</option>
+              <option value="ROLE_ANALYST">Аналитик</option>
+              <option value="ROLE_ADMIN">Администратор</option>
             </select>
           </div>
-          <button className="login-button" onClick={handleRegistration}>Register</button>
+          <button className="login-button" onClick={handleRegistration}>Зарегистрироваться</button>
           <div className="login-link">
-            <p className='registration-link'>Already have an account? <a href="/">Login here</a></p>
+            <p className='registration-link'>Уже есть аккаунт? <a href="/">Войти здесь</a></p>
           </div>
         </div>
       </div>

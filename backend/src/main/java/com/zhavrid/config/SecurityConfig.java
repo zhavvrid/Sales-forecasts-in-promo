@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/login", "/register").permitAll()
                         .requestMatchers("/google-sheet/load","/google-sheet/import","/google-sheet/products","/google-sheet/sales","/google-sheet/promotions",
-                                "/forecast/run","/forecast").permitAll()
+                                "/forecast/run","/forecast","/profile/password","/profile").permitAll()
                         .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/user/**").hasAnyAuthority("USER", "ADMIN")
                         .anyRequest().authenticated()

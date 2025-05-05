@@ -22,7 +22,7 @@ function HomePage({ user, onLogout }) {
             <div className="home-page">
                 <nav className="navbar">
                     <div className="left-logo">
-                        <span className="logo-text">SalesSights {user.username}</span>
+                        <span className="logo-text">Hello {user.username}!</span>
                     </div>
                     <div className="right-buttons">
                         {/*<button className="login-btn">Login</button>*/}
@@ -31,9 +31,9 @@ function HomePage({ user, onLogout }) {
                         {isUserMenuOpen && (
                             <div className="custom-menu">
                                 <ul>
-                                    <li onClick={goToProfile}>Profile</li>
-                                    <li>News</li>
-                                    <li onClick={onLogout}>Logout</li>
+                                    <li onClick={goToProfile}>Профиль</li>
+                                    <li>Новости</li>
+                                    <li onClick={onLogout}>Выйти</li>
                                 </ul>
                             </div>
                         )}
@@ -47,7 +47,7 @@ function HomePage({ user, onLogout }) {
                         ForecastMaster
                     </h1>
                     <h2 className="text-3xl text-black mb-10 text-center">
-                        Streamlined Sales Prediction Website
+                        Пдатформа для прогнозирования продаж
                     </h2>
 
                     <div className="card-grid">

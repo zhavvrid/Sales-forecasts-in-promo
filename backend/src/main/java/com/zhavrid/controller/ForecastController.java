@@ -61,8 +61,8 @@ public class ForecastController {
                             .body("Promotion not found");
                 }
             }
-            String pythonPath = "C:\\Users\\zhavr\\FlaskProject\\.venv\\Scripts\\python.exe";
-            String scriptPath = "C:\\Users\\zhavr\\FlaskProject\\app.py";
+            String pythonPath = "C:\\Users\\zhavr\\OneDrive\\Рабочий стол\\СТОЭИ курсовая\\forecast_sales_in_promo\\FlaskProject\\.venv\\Scripts\\python.exe";
+            String scriptPath = "C:\\Users\\zhavr\\OneDrive\\Рабочий стол\\СТОЭИ курсовая\\forecast_sales_in_promo\\FlaskProject\\app.py";
             String modelType = body != null ? (String) body.get("modelType") : null;
             Map<String, Object> modelParams = body != null ? (Map<String, Object>) body.get("modelParams") : null;
 
@@ -76,7 +76,7 @@ public class ForecastController {
 
             if (modelParams != null) {
                 String jsonParams = new ObjectMapper().writeValueAsString(modelParams);
-                jsonParams = jsonParams.replace("\"", "\\\"");  // Экранируем кавычки
+                jsonParams = jsonParams.replace("\"", "\\\"");
                 cmdArgs.add("\"" + jsonParams + "\"");
             } else {
                 cmdArgs.add("\"{}\"");

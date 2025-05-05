@@ -1,4 +1,16 @@
 
+.main-content {
+  transition: margin-left 0.3s ease-in-out;
+  padding-left: 20px; /* Добавить отступ слева для корректного отображения */
+}
+
+.main-content.sidebar-open {
+  margin-left: 250px; /* Отступ для открытого сайдбара */
+}
+
+.main-content.sidebar-closed {
+  margin-left: 0; /* Отступ для закрытого сайдбара */
+}
 
 /* Общая раскладка */
 .layout-wrapper {
@@ -20,10 +32,6 @@
   left: 0;
   transition: width 0.3s ease-in-out;
   z-index: 40;
-}
-
-.main-content {
-  transition: margin-left 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {

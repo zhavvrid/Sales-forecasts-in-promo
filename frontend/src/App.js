@@ -33,6 +33,7 @@ function App() {
         setUser(userData);
         localStorage.setItem('token', userData.token);
         localStorage.setItem('userRoles', JSON.stringify(userData.roles));
+        localStorage.setItem('user', JSON.stringify(userData));
     };
 
     const handleLogout = () => {
@@ -94,7 +95,7 @@ function AuthLink() {
     if (location.pathname !== '/register') {
         return (
             <p className="registration-link">
-                Don't have an account? <Link to="/register">Click here to register</Link>
+                Нет аккаунта? <Link to="/register">Зарегистрируйтесь здесь</Link>
             </p>
         );
     }
@@ -120,7 +121,7 @@ function HomeLayout({ user, onLogout, isAdmin, isAnalyst, setUser, sidebarOpen, 
             </div>
 
             {/* Основное содержимое */}
-            <div className={`flex-1 overflow-auto transition-all duration-300 ease-in-out ${sidebarOpen ? 'ml-64' : 'ml-0'}`}>
+            <div className={`flex-1 overflow-auto transition-all duration-300 ease-in-out ${sidebarOpen ? 'ml-64' : 'ml-0'} ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
                 <Routes>
                     <Route path="/" element={<HomePage user={user} onLogout={onLogout}/>} />
                     <Route path="/forecast" element={<ForecastPage />} />

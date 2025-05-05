@@ -98,3 +98,48 @@ body {
 .registration-link a:hover {
   text-decoration: underline;
 }
+
+/* Role Selection Styles */
+.role-radio-container {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.role-option {
+  flex: 1;
+  padding: 12px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  background: white;
+}
+
+.role-option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.role-option span {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.role-option:hover {
+  border-color: #a5b4fc;
+}
+
+.role-option.selected {
+  border-color: #4F46E5;
+  background-color: #f0f1ff;
+}
+
+.role-option.selected span {
+  color: #4F46E5;
+  font-weight: 500;
+}

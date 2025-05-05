@@ -32,13 +32,19 @@ public class JwtFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+        String path = request.getRequestURI();
+
+        if (path.equals("/login") || path.equals("/register") ) {
+            filterChain.doFilter(request, response);
+            return;
+        }
         String authHeader = request.getHeader("Authorization");
         String token = null;
         String username = null;
 
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            token = authHeader.substring(7);
-            username = jwtService.extractUserName(token);
+            token = authHeader.substring(7);  // Извлекаем токен из заголовка
+            username = jwtService.extractUserName(token);  // Извлекаем имя пользователя из токена
 
             logger.info("Processing token for user: {}", username);
         } else {
@@ -49,19 +55,25 @@ public class JwtFilter extends OncePerRequestFilter {
             try {
                 UserDetails userDetails = context.getBean(MyUserDetailsService.class).loadUserByUsername(username);
 
-                if (jwtService.validateToken(token, userDetails)) {
+                if (token != null && !token.isEmpty() && jwtService.validateToken(token, userDetails)) {
+
                     UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
                     SecurityContextHolder.getContext().setAuthentication(authToken);
                     logger.info("Authentication successful for user: {}", username);
                 } else {
-                    logger.warn("Invalid JWT token for user: {}", username);
+                    logger.warn("Invalid or expired JWT token for user: {}", username);
+                    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid JWT Token");
+                    return;
                 }
             } catch (Exception e) {
                 logger.error("Error processing JWT for user: {}", username, e);
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error processing JWT");
+                return;
             }
         }
+
         filterChain.doFilter(request, response);
     }
 }
